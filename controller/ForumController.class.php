@@ -71,7 +71,9 @@
 			);
 		}
 		
-		public function ajouterTopic($idcat){ $this->authenticationRequired();
+		public function ajouterTopic($idcat){ 
+        
+            $this->authenticationRequired();
 			
 			if(!empty($_POST)){
 				$titre  = $_POST['titre'];
@@ -94,6 +96,8 @@
 		}
 		
 		public function lock($idtopic){
+                        
+            $this->authenticationRequired();
 			
 			$topic = $this->managers['topic']->getById($idtopic);
 			
